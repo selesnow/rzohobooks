@@ -40,7 +40,7 @@ zb_get_invoices(
 
 \item{status}{Search invoices by invoice status.Allowed Values: sent, draft, overdue, paid, void, unpaid, partially_paid and viewed}
 
-\item{search_text}{Search invoices by invoice number or purchase order or customer name. Max-length \link{100}}
+\item{search_text}{Search invoices by invoice number or purchase order or customer name. Max-length 100}
 
 \item{filter_by}{Filter invoices by any status or payment expected date.Allowed Values: \code{Status.All}, \code{Status.Sent}, \code{Status.Draft}, \code{Status.OverDue}, \code{Status.Paid}, \code{Status.Void}, \code{Status.Unpaid}, \code{Status.PartiallyPaid}, \code{Status.Viewed} and \code{Date.PaymentExpectedDate}}
 }
@@ -56,6 +56,10 @@ For more details see \href{https://www.zoho.com/books/api/v3/invoices/#list-invo
 \examples{
 \dontrun{
 organizations <- zb_get_organizations()
-invoices <- zb_get_invoices(organizations$organization_id, date_start = '2025-02-01', date_end  = '2025-02-10')
+invoices <- zb_get_invoices(
+    organizations$organization_id,
+    date_start = '2025-02-01',
+    date_end  = '2025-02-10'
+ )
 }
 }

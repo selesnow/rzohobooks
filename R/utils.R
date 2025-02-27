@@ -19,14 +19,15 @@ zb_make_request <- function(
             req_url_path_append('books/v3/') %>%
             req_url_path_append(add_path) %>%
             req_url_path_append(endpoint) %>%
-            req_url_query(organization_id=organizations$organization_id[3], per_page = 500, .multi = 'comma') %>%
+            req_url_query(..., per_page = 500, .multi = 'comma') %>%
             req_headers(
               Authorization = str_glue('Zoho-oauthtoken {token$access_token}')
             ) %>%
-            req_error(body = zb_error) %>%
+            req_error(is_error = zb_is_error, body = zb_error_body) %>%
             req_retry(is_transient = \(resp) resp_status(resp) %in% c(429, 500)) %>%
-            req_perform() %>%
-            resp_body_json()
+            req_perform()
+
+  resp <- resp_body_json(resp)
 
   result <- append(result, resp[[coalesce(endpoints[[endpoint]], endpoint)]])
 
@@ -44,10 +45,11 @@ zb_make_request <- function(
               req_headers(
                 Authorization = str_glue('Zoho-oauthtoken {token$access_token}')
               ) %>%
-              req_error(body = zb_error) %>%
+              req_error(is_error = zb_is_error, body = zb_error_body) %>%
               req_retry(is_transient = \(resp) resp_status(resp) %in% c(429, 500)) %>%
-              req_perform() %>%
-              resp_body_json()
+              req_perform()
+
+      resp <- resp_body_json(resp)
 
       result <- append(result, resp[[coalesce(endpoints[[endpoint]], endpoint)]])
 
@@ -63,10 +65,13 @@ zb_make_request <- function(
 }
 
 # Get error message
-zb_error <- function(resp) {
+zb_error_body <- function(resp) {
   resp <- resp_body_json(resp)
-  cli::cli_alert_danger('Error!\nCode: {resp$code}\nMessage: {resp$message}')
-  invisible()
+  c(str_glue('Code: {resp$code}'), str_glue('Message: {resp$message}'))
+}
+
+zb_is_error <- function(resp) {
+  resp_body_json(resp)$message != 'success'
 }
 
 # Main function for parsing response

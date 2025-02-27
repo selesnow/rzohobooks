@@ -13,10 +13,18 @@
 #' @param search_text Search estimates by estimate number or reference or customer name.
 #' @param filter_by Filter estimates by status.Allowed Values `Status.All`, `Status.Sent`, `Status.Draft`, `Status.Invoiced`, `Status.Accepted`, `Status.Declined` and `Status.Expired`.
 #'
-#' @returns
+#' @returns tibble
 #' @export
 #'
 #' @examples
+#' \dontrun{
+#' organizations <- zb_get_organizations()
+#' estimates <- zb_get_estimates(
+#'     organizations$organization_id,
+#'     date_start = '2025-02-01',
+#'     date_end  = '2025-02-10'
+#' )
+#' }
 zb_get_estimates <- function(
     organization_id,
     date_start  = NULL,

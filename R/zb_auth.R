@@ -3,6 +3,8 @@
 # - ZB_CLIENT_SECRET
 # - ZB_REDIRECT_URI
 
+. <- NULL
+
 zb_client_id <- function() {
   Sys.getenv('ZB_CLIENT_ID')
 }
@@ -15,15 +17,21 @@ zb_redirect_uri <- function() {
   Sys.getenv('ZB_REDIRECT_URI')
 }
 
+zb_token_cache_mode <- function() {
+  Sys.getenv('ZB_AUTH_CACHE_MODE')
+}
+
 zb_token_path <- function(
-  client_id     = zb_client_id()
+  client_id = zb_client_id()
 ) {
 
-  if (! dir.exists(tools::R_user_dir('rzohobooks', 'cache'))) {
-    dir.create(tools::R_user_dir('rzohobooks', 'cache'))
+  token_dir <- ifelse(zb_token_cache_mode() == 'global', rappdirs::site_data_dir("rzohobooks"), rappdirs::user_cache_dir("rzohobooks"))
+
+  if (! dir.exists(token_dir)) {
+    dir.create(token_dir, showWarnings = FALSE, recursive = TRUE)
   }
 
-  str_glue('{tools::R_user_dir("rzohobooks", "cache")}/zb-token-{client_id}.rds')
+  str_glue('{token_dir}/zb-token-{client_id}.rds')
 
 }
 

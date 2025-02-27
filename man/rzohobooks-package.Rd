@@ -4,12 +4,17 @@
 \name{rzohobooks-package}
 \alias{rzohobooks}
 \alias{rzohobooks-package}
-\title{rzohobooks: What the Package Does (One Line, Title Case)}
+\title{rzohobooks: Work with 'Zoho Books API'}
 \description{
-What the package does (one paragraph).
+Get data from 'Zoho Books API'.
 }
 \author{
-\strong{Maintainer}: First Last \email{first.last@example.com}
+\strong{Maintainer}: Alexey Seleznev \email{selesnow@gmail.com} (\href{https://orcid.org/0000-0003-0410-7385}{ORCID})
+
+Other contributors:
+\itemize{
+  \item Netpeak [copyright holder]
+}
 
 }
 \keyword{internal}

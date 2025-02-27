@@ -32,9 +32,22 @@ zb_get_estimates(
 
 \item{filter_by}{Filter estimates by status.Allowed Values \code{Status.All}, \code{Status.Sent}, \code{Status.Draft}, \code{Status.Invoiced}, \code{Status.Accepted}, \code{Status.Declined} and \code{Status.Expired}.}
 }
+\value{
+tibble
+}
 \description{
 List all estimates (Quotes)
 }
 \details{
 For more details see \href{https://www.zoho.com/books/api/v3/estimates/#list-estimates}{API docs}
+}
+\examples{
+\dontrun{
+organizations <- zb_get_organizations()
+estimates <- zb_get_estimates(
+    organizations$organization_id,
+    date_start = '2025-02-01',
+    date_end  = '2025-02-10'
+)
+}
 }

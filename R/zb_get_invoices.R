@@ -10,7 +10,7 @@
 #' @param due_date_before Search invoices by due date. Default date format is yyyy-mm-dd.
 #' @param due_date_after Search invoices by due date. Default date format is yyyy-mm-dd.
 #' @param status Search invoices by invoice status.Allowed Values: sent, draft, overdue, paid, void, unpaid, partially_paid and viewed
-#' @param search_text Search invoices by invoice number or purchase order or customer name. Max-length [100]
+#' @param search_text Search invoices by invoice number or purchase order or customer name. Max-length 100
 #' @param filter_by Filter invoices by any status or payment expected date.Allowed Values: `Status.All`, `Status.Sent`, `Status.Draft`, `Status.OverDue`, `Status.Paid`, `Status.Void`, `Status.Unpaid`, `Status.PartiallyPaid`, `Status.Viewed` and `Date.PaymentExpectedDate`
 #'
 #' @details
@@ -23,7 +23,11 @@
 #' @examples
 #' \dontrun{
 #' organizations <- zb_get_organizations()
-#' invoices <- zb_get_invoices(organizations$organization_id, date_start = '2025-02-01', date_end  = '2025-02-10')
+#' invoices <- zb_get_invoices(
+#'     organizations$organization_id,
+#'     date_start = '2025-02-01',
+#'     date_end  = '2025-02-10'
+#'  )
 #' }
 zb_get_invoices <- function(
     organization_id,
