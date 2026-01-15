@@ -1,7 +1,7 @@
-#' Get List of All Items
+#' Get List of All Expenses
 #'
-#' @param organization_id Organizations id, you can set only one id
-#' @param filter_by Filter items by status, allowed values: `Status.All`, `Status.Active` and `Status.Inactive`
+#' @param organization_id Organizations id, you can get list pf organization use `zb_get_organizations()`.
+#' @param filter_by Filter expenses by status, allowed values:  `Status.All`, `Status.Billable`, `Status.Nonbillable`, `Status.Reimbursed`, `Status.Invoiced` `Status.Unbilled`
 #'
 #' @returns tibble
 #' @export
@@ -9,11 +9,11 @@
 #' @examples
 #' \dontrun{
 #' organizations <- zb_get_organizations()
-#' items <- zb_get_items(
+#' projects <- zb_get_expenses(
 #'     organizations$organization_id
 #' )
 #' }
-zb_get_items <- function(
+zb_get_expenses <- function(
   organization_id,
   filter_by = NULL
 ) {
@@ -22,14 +22,12 @@ zb_get_items <- function(
     result <- map_dfr(organization_id,
                       \(x) {
                         items <- zb_make_request(
-                          endpoint        = 'items',
+                          endpoint        = 'expenses',
                           organization_id = x,
                           filter_by       = filter_by
                         ) %>%
                           zb_parse() %>%
                           mutate(organization_id = x)
-                        if (is.list(items$weight)) items$weight <- unlist(items$weight)
-                        items
                       }
     )
   })

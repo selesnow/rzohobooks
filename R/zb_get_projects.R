@@ -32,4 +32,8 @@ zb_get_projects <- function(
     )
   })
 
+  cli::cli_alert_success('success')
+
+  return(result)
+
 }
