@@ -21,7 +21,7 @@ zb_get_projects <- function(
   suppressMessages({
     result <- map_dfr(organization_id,
                       \(x) {
-                        items <- zb_make_request(
+                        zb_make_request(
                           endpoint        = 'projects',
                           organization_id = x,
                           filter_by       = filter_by

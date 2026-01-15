@@ -3,6 +3,7 @@
 export(zb_get_bank_accounts)
 export(zb_get_bank_transactions)
 export(zb_get_bills)
+export(zb_get_chart_of_accounts)
 export(zb_get_contacts)
 export(zb_get_credit_notes)
 export(zb_get_currencies)

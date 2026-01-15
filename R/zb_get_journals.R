@@ -30,7 +30,7 @@ zb_get_journals <- function(
   suppressMessages({
     result <- map_dfr(organization_id,
                       \(x) {
-                        items <- zb_make_request(
+                        zb_make_request(
                           endpoint        = 'journals',
                           organization_id = x,
                           filter_by       = filter_by,
