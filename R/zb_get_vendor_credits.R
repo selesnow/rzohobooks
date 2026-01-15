@@ -1,7 +1,7 @@
-#' Get List Vendor Payments
+#' Get List of Vendor Credits
 #'
 #' @param organization_id Organizations id, you can get list pf organization use `zb_get_organizations()`.
-#' @param filter_by Filter payments by mode. Allowed Values: `PaymentMode.All`, `PaymentMode.Check`, `PaymentMode.Cash`, `PaymentMode.BankTransfer`, `PaymentMode.Paypal`, `PaymentMode.CreditCard`, `PaymentMode.GoogleCheckout`, `PaymentMode.Credit`, `PaymentMode.Authorizenet`, `PaymentMode.BankRemittance`, `PaymentMode.Payflowpro` and `PaymentMode.Others`.
+#' @param filter_by Filter vendor credits by status using predefined status values. Allowed values: `Status.All`, `Status.Open`, `Status.Draft`, `Status.Closed`, and `Status.Void`.
 #'
 #' @returns tibble
 #' @export
@@ -9,19 +9,19 @@
 #' @examples
 #' \dontrun{
 #' organizations <- zb_get_organizations()
-#' vendor_payments <- zb_get_vendor_payments(
+#' vendor_credits <- zb_get_vendor_credits(
 #'     organizations$organization_id
 #' )
 #' }
-zb_get_vendor_payments <- function(
+zb_get_vendor_credits <- function(
   organization_id,
   filter_by = NULL
-) {
+  ) {
   suppressMessages({
     result <- map_dfr(organization_id,
                       \(x) {
                         zb_make_request(
-                          endpoint        = 'vendorpayments',
+                          endpoint        = 'vendorcredits',
                           organization_id = x,
                           filter_by       = filter_by
                         ) %>%

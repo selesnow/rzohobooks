@@ -17,3 +17,11 @@ tibble
 \description{
 Get List Vendor Payments
 }
+\examples{
+\dontrun{
+organizations <- zb_get_organizations()
+vendor_payments <- zb_get_vendor_payments(
+    organizations$organization_id
+)
+}
+}
