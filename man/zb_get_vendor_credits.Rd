@@ -4,12 +4,27 @@
 \alias{zb_get_vendor_credits}
 \title{Get List of Vendor Credits}
 \usage{
-zb_get_vendor_credits(organization_id, filter_by = NULL)
+zb_get_vendor_credits(
+  organization_id,
+  filter_by = NULL,
+  date_start = NULL,
+  date_end = NULL,
+  date_before = NULL,
+  date_after = NULL
+)
 }
 \arguments{
 \item{organization_id}{Organizations id, you can get list pf organization use \code{zb_get_organizations()}.}
 
 \item{filter_by}{Filter vendor credits by status using predefined status values. Allowed values: \code{Status.All}, \code{Status.Open}, \code{Status.Draft}, \code{Status.Closed}, and \code{Status.Void}.}
+
+\item{date_start}{Start date of period}
+
+\item{date_end}{End date of period}
+
+\item{date_before}{Date before}
+
+\item{date_after}{Date after}
 }
 \value{
 tibble

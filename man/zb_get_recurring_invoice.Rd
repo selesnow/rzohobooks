@@ -4,12 +4,27 @@
 \alias{zb_get_recurring_invoice}
 \title{Get List of Recurring Invoice}
 \usage{
-zb_get_recurring_invoice(organization_id, filter_by = NULL)
+zb_get_recurring_invoice(
+  organization_id,
+  filter_by = NULL,
+  date_start = NULL,
+  date_end = NULL,
+  date_before = NULL,
+  date_after = NULL
+)
 }
 \arguments{
 \item{organization_id}{Organizations id, you can get list pf organization use \code{zb_get_organizations()}.}
 
 \item{filter_by}{Filter Recurring invoices by any status or payment expected date. Allowed Values: \code{Status.All}, \code{Status.Active}, \code{Status.Stopped}, \code{Status.Expired}.}
+
+\item{date_start}{Start date of period}
+
+\item{date_end}{End date of period}
+
+\item{date_before}{Date before}
+
+\item{date_after}{Date after}
 }
 \value{
 tibble

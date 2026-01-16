@@ -10,6 +10,14 @@ zb_get_retainer_invoices(organization_id, filter_by = NULL)
 \item{organization_id}{Organizations id, you can get list pf organization use \code{zb_get_organizations()}.}
 
 \item{filter_by}{Filter invoices by any status or payment expected date. Allowed Values: \code{Status.All}, \code{Status.Sent}, \code{Status.Draft}, \code{Status.OverDue}, \code{Status.Paid}, \code{Status.Void}, \code{Status.Unpaid}, \code{Status.PartiallyPaid}, \code{Status.Viewed} and \code{Date.PaymentExpectedDate}.}
+
+\item{date_start}{Start date of period}
+
+\item{date_end}{End date of period}
+
+\item{date_before}{Date before}
+
+\item{date_after}{Date after}
 }
 \value{
 tibble

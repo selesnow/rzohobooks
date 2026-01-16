@@ -4,12 +4,27 @@
 \alias{zb_get_vendor_payments}
 \title{Get List Vendor Payments}
 \usage{
-zb_get_vendor_payments(organization_id, filter_by = NULL)
+zb_get_vendor_payments(
+  organization_id,
+  filter_by = NULL,
+  date_start = NULL,
+  date_end = NULL,
+  date_before = NULL,
+  date_after = NULL
+)
 }
 \arguments{
 \item{organization_id}{Organizations id, you can get list pf organization use \code{zb_get_organizations()}.}
 
 \item{filter_by}{Filter payments by mode. Allowed Values: \code{PaymentMode.All}, \code{PaymentMode.Check}, \code{PaymentMode.Cash}, \code{PaymentMode.BankTransfer}, \code{PaymentMode.Paypal}, \code{PaymentMode.CreditCard}, \code{PaymentMode.GoogleCheckout}, \code{PaymentMode.Credit}, \code{PaymentMode.Authorizenet}, \code{PaymentMode.BankRemittance}, \code{PaymentMode.Payflowpro} and \code{PaymentMode.Others}.}
+
+\item{date_start}{Start date of period}
+
+\item{date_end}{End date of period}
+
+\item{date_before}{Date before}
+
+\item{date_after}{Date after}
 }
 \value{
 tibble
