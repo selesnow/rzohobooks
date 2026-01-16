@@ -49,6 +49,15 @@ access_token необходимый для работы с Zoho Books API нео
 * `zb_get_customer_payments()` - Реестр клиентских оплат [документация API](https://www.zoho.com/books/api/v3/customer-payments/#list-customer-payments)
 * `zb_get_bank_transactions()` - Банковские транзакции [документация API](https://www.zoho.com/books/api/v3/customer-payments/#list-customer-payments)
 * `zb_get_bills()` - Реестр счетов [документация API](https://www.zoho.com/books/api/v3/bills/#list-bills)
+* `zb_get_items()` - [документация API](https://www.zoho.com/books/api/v3/items/#list-items)
+* `zb_get_projects()` - [документация API](https://www.zoho.com/books/api/v3/projects/#list-projects)
+* `zb_get_expenses()` - [документация API](https://www.zoho.com/books/api/v3/expenses/#list-expenses)
+* `zb_get_journals()` - [документация API](https://www.zoho.com/books/api/v3/journals/#overview)
+* `zb_get_chart_of_accounts()` - [документация API](https://www.zoho.com/books/api/v3/chart-of-accounts/#list-chart-of-accounts)
+* `zb_get_payments_made()` - [документация API](https://www.zoho.com/books/api/v3/vendor-payments/#list-vendor-payments)
+* `zb_get_vendor_credits()` - [документация API](https://www.zoho.com/books/api/v3/vendor-credits/#list-vendor-credits)
+* `zb_get_retainer_invoices()` - [документация API](https://www.zoho.com/books/api/v3/retainer-invoices/#list-a-retainer-invoices)
+* `zb_get_recurring_invoices()` - [документация API](https://www.zoho.com/books/api/v3/recurring-invoices/#list-all-recurring-invoice)
 
 ## Author
 Alexey Seleznev, Head of analytics dept. at [Netpeak](https://netpeak.us/)
