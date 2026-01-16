@@ -2,6 +2,10 @@
 #'
 #' @param organization_id Organizations id, you can get list pf organization use `zb_get_organizations()`.
 #' @param filter_by Filter expenses by status, allowed values:  `Status.All`, `Status.Billable`, `Status.Nonbillable`, `Status.Reimbursed`, `Status.Invoiced` `Status.Unbilled`
+#' @param date_start Start date of period
+#' @param date_end End date of period
+#' @param date_before Date before
+#' @param date_after Date after
 #'
 #' @returns tibble
 #' @export
@@ -15,7 +19,11 @@
 #' }
 zb_get_expenses <- function(
   organization_id,
-  filter_by = NULL
+  filter_by   = NULL,
+  date_start  = NULL,
+  date_end    = NULL,
+  date_before = NULL,
+  date_after  = NULL
 ) {
 
   suppressMessages({
@@ -24,7 +32,11 @@ zb_get_expenses <- function(
                         zb_make_request(
                           endpoint        = 'expenses',
                           organization_id = x,
-                          filter_by       = filter_by
+                          filter_by       = filter_by,
+                          date_start      = date_start,
+                          date_end        = date_end,
+                          date_before     = date_before,
+                          date_after      = date_after
                         ) %>%
                           zb_parse() %>%
                           mutate(organization_id = x)
