@@ -19,7 +19,11 @@
 #' }
 zb_get_retainer_invoices <- function(
   organization_id,
-  filter_by = NULL
+  filter_by = NULL,
+  date_start  = NULL,
+  date_end    = NULL,
+  date_before = NULL,
+  date_after  = NULL
 ) {
   suppressMessages({
     result <- map_dfr(organization_id,
