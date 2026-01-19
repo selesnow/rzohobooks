@@ -26,7 +26,7 @@ zb_get_recurring_invoice <- function(
   date_after  = NULL
 ) {
   suppressMessages({
-    result <- map_dfr(organization_id[1],
+    result <- map_dfr(organization_id,
                       \(x) {
                         zb_make_request(
                           endpoint        = 'recurringinvoices',
