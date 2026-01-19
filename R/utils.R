@@ -1,7 +1,9 @@
 # A matching list, used only in cases where the endpoint name
 # does not match the name of the desired element in the response.
 endpoints <- list(
-  'exchangerates'  = 'exchange_rates'
+  'exchangerates'     = 'exchange_rates',
+  'recurringinvoices' = 'recurring_invoices',
+  'vendorcredits'     = 'vendor_credits'
 )
 
 # Main function to send request

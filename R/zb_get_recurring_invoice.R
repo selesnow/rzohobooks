@@ -19,7 +19,7 @@
 #' }
 zb_get_recurring_invoice <- function(
   organization_id,
-  filter_by = NULL,
+  filter_by   = NULL,
   date_start  = NULL,
   date_end    = NULL,
   date_before = NULL,
