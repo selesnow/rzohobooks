@@ -4,7 +4,14 @@
 \alias{zb_get_retainer_invoices}
 \title{Get List of Retainer Invoices}
 \usage{
-zb_get_retainer_invoices(organization_id, filter_by = NULL)
+zb_get_retainer_invoices(
+  organization_id,
+  filter_by = NULL,
+  date_start = NULL,
+  date_end = NULL,
+  date_before = NULL,
+  date_after = NULL
+)
 }
 \arguments{
 \item{organization_id}{Organizations id, you can get list pf organization use \code{zb_get_organizations()}.}
