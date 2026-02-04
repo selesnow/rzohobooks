@@ -4,10 +4,27 @@
 \alias{zb_get_credit_notes}
 \title{Get credit notes}
 \usage{
-zb_get_credit_notes(organization_id)
+zb_get_credit_notes(
+  organization_id,
+  date_start = NULL,
+  date_end = NULL,
+  date_before = NULL,
+  date_after = NULL,
+  search_text = NULL
+)
 }
 \arguments{
 \item{organization_id}{Organizations ids}
+
+\item{date_start}{Search credit notes by bill date.}
+
+\item{date_end}{Search credit notes by bill date.}
+
+\item{date_before}{Search credit notes by bill date.}
+
+\item{date_after}{Search credit notes by bill date.}
+
+\item{search_text}{Search credit notes using text search across multiple fields. Searches credit note number, customer name, and reference number. Max-length 100}
 }
 \value{
 tibble
