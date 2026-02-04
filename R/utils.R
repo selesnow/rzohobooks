@@ -31,7 +31,7 @@ zb_make_request <- function(
 
   resp <- resp_body_json(resp)
 
-  result <- append(result, resp[[coalesce(endpoints[[endpoint]], endpoint)]])
+  result <- append(result, resp[[coalesce(endpoints[[endpoint]], names(resp)[3], endpoint)]])
 
   if ('page_context' %in% names(resp) & isTRUE(resp$page_context$has_more_page)) {
 
