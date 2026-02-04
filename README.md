@@ -49,6 +49,8 @@ access_token необходимый для работы с Zoho Books API нео
 * `zb_get_customer_payments()` - Реестр клиентских оплат [документация API](https://www.zoho.com/books/api/v3/customer-payments/#list-customer-payments)
 * `zb_get_bank_transactions()` - Банковские транзакции [документация API](https://www.zoho.com/books/api/v3/customer-payments/#list-customer-payments)
 * `zb_get_bills()` - Реестр счетов [документация API](https://www.zoho.com/books/api/v3/bills/#list-bills)
+* `zb_get_bills_details()` - Справочник товаров и услуг (items), используемых в инвойсах, эстимейтах и других финансовых документах,  
+  [документация API](https://www.zoho.com/books/api/v3/items/#list-items)
 * `zb_get_items()` - Справочник товаров и услуг (items), используемых в инвойсах, эстимейтах и других финансовых документах, [документация API](https://www.zoho.com/books/api/v3/items/#list-items)
 * `zb_get_projects()` - Список проектов организации с привязкой к клиентам, статусами и настройками биллинга, [документация API](https://www.zoho.com/books/api/v3/projects/#list-projects)
 * `zb_get_expenses()` - Реестр расходов компании с детализацией по категориям, проектам, налогам и способам оплаты, [документация API](https://www.zoho.com/books/api/v3/expenses/#list-expenses)
@@ -58,7 +60,9 @@ access_token необходимый для работы с Zoho Books API нео
 * `zb_get_vendor_credits()` - Список кредит-нот от поставщиков (vendor credits), используемых для уменьшения обязательств, [документация API](https://www.zoho.com/books/api/v3/vendor-credits/#list-vendor-credits)
 * `zb_get_retainer_invoices()` - Реестр ретейнер-инвойсов (предоплат) от клиентов, [документация API](https://www.zoho.com/books/api/v3/retainer-invoices/#list-a-retainer-invoices)
 * `zb_get_recurring_invoices()` - Список рекуррентных (повторяющихся) инвойсов с настройками периодичности и статусами, [документация API](https://www.zoho.com/books/api/v3/recurring-invoices/#list-all-recurring-invoice)
-
+* `zb_get_credit_notes()` - Реестр кредит-нот (credit notes), выписанных клиентам, с базовой информацией по документу: идентификаторы, номера, даты, статусы, суммы и ссылки на связанные инвойсы (без детальной информации по аккаунтам и строкам), [документация API](https://www.zoho.com/books/api/v3/credit-notes/#list-all-credit-notes)
+* `zb_get_credit_notes_details()` - Детализированная информация по кредит-нотам клиентов, включая строки корректировок, счета учёта (`account_id`), налоги и связи с инвойсами,  
+  [документация API](https://www.zoho.com/books/api/v3/credit-notes/#get-a-credit-note)
 
 ## Author
 Alexey Seleznev, Head of analytics dept. at [Netpeak](https://netpeak.us/)
