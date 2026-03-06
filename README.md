@@ -64,6 +64,15 @@ access_token необходимый для работы с Zoho Books API нео
 * `zb_get_credit_notes()` - Реестр кредит-нот (credit notes), выписанных клиентам, с базовой информацией по документу: идентификаторы, номера, даты, статусы, суммы и ссылки на связанные инвойсы (без детальной информации по аккаунтам и строкам), [документация API](https://www.zoho.com/books/api/v3/credit-notes/#list-all-credit-notes)
 * `zb_get_credit_notes_details()` - Детализированная информация по кредит-нотам клиентов, включая строки корректировок, счета учёта (`account_id`), налоги и связи с инвойсами,  
   [документация API](https://www.zoho.com/books/api/v3/credit-notes/#get-a-credit-note)
+* `zb_get_expenses_details()` - Детальная информация о расходах, [документация API](https://www.zoho.com/books/api/v3/expenses/#get-an-expense)
+* `zb_get_vendor_credits_details()` - Детальная информация по кредит-нотам от поставщиков, [документация API](https://www.zoho.com/books/api/v3/vendorcredits/#get-a-vendor-credit)
+* `zb_get_items_details()` - Детальная информация о товарах и услугах, [документация API](https://www.zoho.com/books/api/v3/items/#get-an-item)
+* `zb_get_journals_details()` - Детальная информация по журнальным проводкам, [документация API](https://www.zoho.com/books/api/v3/journals/#get-a-journal)
+* `zb_get_vendor_payments_details()` - Детальная информация по оплатам поставщикам, [документация API](https://www.zoho.com/books/api/v3/vendorpayments/#get-a-vendor-payment)
+* `zb_get_bank_transactions_details()` - Детальная информация по банковским транзакциям, [документация API](https://www.zoho.com/books/api/v3/banktransactions/#get-a-transaction)
+* `zb_get_bank_accounts_details()` - Детальная информация по банковским счетам, [документация API](https://www.zoho.com/books/api/v3/bankaccounts/#get-a-bank-account)
+* `zb_get_recurring_invoice_details()` - Детальная информация по рекуррентным инвойсам, [документация API](https://www.zoho.com/books/api/v3/recurringinvoices/#get-a-recurring-invoice)
+* `zb_get_retainer_invoices_details()` - Детальная информация по ретейнер-инвойсам (предоплатам), [документация API](https://www.zoho.com/books/api/v3/retainerinvoices/#get-a-retainer-invoice)
 
 ## Author
 Alexey Seleznev, Head of analytics dept. at [Netpeak](https://netpeak.us/)

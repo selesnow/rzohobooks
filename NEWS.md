@@ -1,4 +1,17 @@
-2# rzohobooks 0.1.0
+# rzohobooks 0.2.0
+
+В пакет добавлены функции:
+* `zb_get_expenses_details()`
+* `zb_get_vendor_credits_details()`
+* `zb_get_items_details()`
+* `zb_get_journals_details()`
+* `zb_get_vendor_payments_details()`
+* `zb_get_bank_transactions_details()`
+* `zb_get_bank_accounts_details()`
+* `zb_get_recurring_invoice_details()`
+* `zb_get_retainer_invoices_details()`
+
+# rzohobooks 0.1.0
 
 В пакет добавлены функции:
 * `zb_get_items()`
