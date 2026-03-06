@@ -29,7 +29,7 @@ zb_get_bills_details <- function(
       bill_id,
       \(id) {
 
-        zb_make_request(
+        test <- zb_make_request(
           endpoint = glue::glue("bills/{id}"),
           organization_id = organization_id
         ) %>%
@@ -38,7 +38,7 @@ zb_get_bills_details <- function(
           mutate(
             organization_id = organization_id,
             bill_id         = id,
-            mutate(due_by_days = as.character(due_by_days))
+            due_by_days = as.character(due_by_days)
           )
       }
     )
