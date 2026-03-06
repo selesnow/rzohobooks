@@ -47,6 +47,7 @@ access_token необходимый для работы с Zoho Books API нео
 * `zb_get_zb_get_estimates()` - [документация API](https://www.zoho.com/books/api/v3/estimates/#list-estimates)
 * `zb_get_invoices()` - Список инвойсов [документация API](https://www.zoho.com/books/api/v3/invoices/#list-invoices)
 * `zb_get_customer_payments()` - Реестр клиентских оплат [документация API](https://www.zoho.com/books/api/v3/customer-payments/#list-customer-payments)
+* `zb_get_customer_payments_details()` - Детальная информация по клиентской оплате [документация API](https://www.zoho.com/books/api/v3/customer-payments/#retrieve-a-payment)
 * `zb_get_bank_transactions()` - Банковские транзакции [документация API](https://www.zoho.com/books/api/v3/customer-payments/#list-customer-payments)
 * `zb_get_bills()` - Реестр счетов [документация API](https://www.zoho.com/books/api/v3/bills/#list-bills)
 * `zb_get_bills_details()` - Справочник товаров и услуг (items), используемых в инвойсах, эстимейтах и других финансовых документах,  

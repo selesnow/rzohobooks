@@ -37,7 +37,8 @@ zb_get_bills_details <- function(
           zb_parse() %>%
           mutate(
             organization_id = organization_id,
-            bill_id         = id
+            bill_id         = id,
+            mutate(due_by_days = as.character(due_by_days))
           )
       }
     )
