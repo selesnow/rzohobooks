@@ -29,7 +29,7 @@ zb_get_items_details <- function(
       item_id,
       \(id) {
 
-        zb_make_request(
+        items_details <- zb_make_request(
           endpoint = glue::glue("items/{id}"),
           organization_id = organization_id
         ) %>%
@@ -38,11 +38,17 @@ zb_get_items_details <- function(
           dplyr::mutate(
             organization_id = organization_id,
             item_id         = id,
-            sales_rate      = as.character(sales_rate),
-            initial_stock   = as.character(initial_stock)
+            sales_rate      = as.character(sales_rate)
           ) %>%
           tidyr::unnest_wider(tax_information, names_sep = '_') %>%
           tidyr::unnest_wider(purchase_tax_information, names_sep = '_')
+
+        if ('initial_stock' %in% names(items_details)) {
+          items_details <- dplyr::mutate(items_details, initial_stock = as.character(initial_stock))
+        }
+
+        items_details
+
       }
     )
 
