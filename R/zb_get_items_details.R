@@ -36,9 +36,10 @@ zb_get_items_details <- function(
           list() %>%
           zb_parse() %>%
           dplyr::mutate(
-            organization_id = organization_id,
-            item_id         = id,
-            sales_rate      = as.character(sales_rate)
+            organization_id    = organization_id,
+            item_id            = id,
+            sales_rate         = as.character(sales_rate),
+            initial_stock_rate = as.character(initial_stock_rate)
           ) %>%
           tidyr::unnest_wider(tax_information, names_sep = '_') %>%
           tidyr::unnest_wider(purchase_tax_information, names_sep = '_')
