@@ -37,7 +37,8 @@ zb_get_items_details <- function(
           zb_parse() %>%
           dplyr::mutate(
             organization_id = organization_id,
-            item_id         = id
+            item_id         = id,
+            sales_rate      = as.character(sales_rate)
           )
       }
     )
