@@ -38,14 +38,17 @@ zb_get_items_details <- function(
           dplyr::mutate(
             organization_id    = organization_id,
             item_id            = id,
-            sales_rate         = as.character(sales_rate),
-            initial_stock_rate = as.character(initial_stock_rate)
+            sales_rate         = as.character(sales_rate)
           ) %>%
           tidyr::unnest_wider(tax_information, names_sep = '_') %>%
           tidyr::unnest_wider(purchase_tax_information, names_sep = '_')
 
         if ('initial_stock' %in% names(items_details)) {
           items_details <- dplyr::mutate(items_details, initial_stock = as.character(initial_stock))
+        }
+
+        if ('initial_stock_rate' %in% names(items_details)) {
+          items_details <- dplyr::mutate(items_details, initial_stock_rate = as.character(initial_stock_rate))
         }
 
         items_details
