@@ -39,7 +39,8 @@ zb_get_items_details <- function(
             organization_id = organization_id,
             item_id         = id,
             sales_rate      = as.character(sales_rate)
-          )
+          ) %>%
+          tidyr::unnest_wider(tax_information, names_sep = '_')
       }
     )
 
